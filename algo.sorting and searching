@@ -1,0 +1,25 @@
+PROCEDURE Insertion_sort(n:INTEGER , var card:ARRAY_OF INTEGER[n])
+VAR
+    i,j,val:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        val:=card[i];
+        j:=i-1;
+        WHILE (j>=0 AND card[j]>val) DO
+            card[j+1]:=card[j];
+            j:=j-1;
+        END_WHILE
+        card[j+1]:=val;
+    END_FOR
+END
+ALGORITHM Insertion_cards
+VAR
+    i: INTEGER;
+    card:=[i];
+    
+BEGIN
+    Insertion_sort(n,card);
+    FOR i FROM 0 TO n STEP 1  DO
+        write(card[i]);
+    END_FOR
+END
